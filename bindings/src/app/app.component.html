@@ -1,0 +1,36 @@
+<div>{{user.name}}</div>
+<div [innerText]="user.name"></div>
+<input type="text" [value]="user.name"/>
+<input type="text" [(ngModel)]="user.name"/>
+
+<div [style.backgroundColor]="color" innerText="{{user.name}}"></div>
+<input type="text" value="{{user.name}}"/>
+
+<table border="1">
+    <tr><th>ID</th><th>Name</th></tr>
+    <tr *ngFor="let user of userList">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+    </tr>
+</table>
+
+<div *ngIf="userList.length>2" >Totally there are {{userList.length}} users </div>
+
+<img [src]="imagepath"/>    
+<div> <a [href]="link"></a></div>
+
+
+<button (click)="show($event)">click Show </button>
+<button (mouseover)="show($event)">Mouseover show</button>
+<button (mousedown)="show($event)">Mousedown show</button>
+<button (mouseleave)="show($event)">Mouseleave show</button>
+<button (mouseup)="show($event)">Mouseup show</button>
+
+<div>
+  <input (focus) ="show($event)"
+   (blur)="show($event)" 
+   (keyup)="show($event)" 
+   (keydown)="show($event)" 
+   (keypress)="show($event)"
+    type="text"/>
+  </div>
