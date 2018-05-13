@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output,EventEmitter} from '@angular/core';
-import {  } from "events";
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+
 
 @Component({
   selector: 'app-user',
@@ -7,12 +7,12 @@ import {  } from "events";
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  
-@Input() user:any;
+
+@Input() user: any;
 @Output() msg = new EventEmitter();
 
-greetingMessage="Hello ! Welcome to Angular from Child Component";
-  
+greetingMessage= 'Hello ! Welcome to Angular from Child Component';
+
   constructor() { }
 
   ngOnInit() {

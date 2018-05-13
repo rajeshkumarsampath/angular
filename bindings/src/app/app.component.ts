@@ -6,45 +6,48 @@ import { UserListService } from './user-list.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
-  selectedUser:any;
-  greetingMsgFromChild:string;
-  gitUserList:any;
+export class AppComponent implements OnInit {
+  selectedUser: any;
+  greetingMsgFromChild: string;
+  gitUserList: any;
+  userList= this.userlist.getUserList();
   user= {
     name: 'Ganesh',
     id: 1
   };
   color= 'green';
 
-  
+
 
   link= 'http://google.com';
-  imagepath= 'assets/angular.png'
+  imagepath= 'assets/angular.png';
+  nameToSearch: any;
 
 
   show(eventobj) {
     console.log('Show Called with' + eventobj.type);
   }
 
-  select(user){
-    this.selectedUser=user;
+  select(user) {
+    this.selectedUser = user;
   }
 
-  userList=this.userlist.getUserList();
 
 
-  constructor (private userlist:UserListService) {}
+
+  constructor (private userlist: UserListService) {}
 
   getGreetingMsg(message) {
-    this.greetingMsgFromChild=message;
+    this.greetingMsgFromChild = message;
   }
-  gitUserInfo(){
-    this.userlist.getGitusers().subscribe((res)=>{
-      this.gitUserList=res;
+  gitUserInfo() {
+    this.userlist.getGitusers().subscribe((res) => {
+      this.gitUserList = res;
     })
+    this.gitUserList = this.userlist.getGitusers()
   }
-  
-  ngOnInit(){
+
+  ngOnInit() {
     this.gitUserInfo();
   }
 

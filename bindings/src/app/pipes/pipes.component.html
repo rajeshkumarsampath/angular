@@ -1,0 +1,49 @@
+
+<div>Product Name : {{productInfo.name | uppercase}}</div>
+<div>Product Name : {{productInfo.name | lowercase}}</div>
+<div>Brand :{{productInfo.brand | titlecase}}</div>
+<br/>
+<div>Amount :{{amount | number}}</div>
+<div>Amount :{{amount | number :'2.4-4' }}</div>
+<!--{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
+minIntegerDigits is the minimum number of integer digits to use. Defaults to 1.
+minFractionDigits is the minimum number of digits after fraction. Defaults to 0.
+maxFractionDigits is the maximum number of digits after fraction. Defaults to 3.-->
+<br/>
+<div>Purchased On: {{productInfo.purchasedDate |date}}</div>
+<div>Purchased On: {{productInfo.purchasedDate |date:"dd MMM yy"}}</div>
+<div>Purchased On: {{productInfo.purchasedDate |date :"dd/MM/yy"}}</div>
+<div>Purchased On: {{productInfo.purchasedDate |date :"MM/dd/yy"}}</div>
+<div>Purchased On: {{productInfo.purchasedDate |date :"M/d/y"}}</div>
+<div>Purchased On: {{productInfo.purchasedDate |date :"EEEE dd MMM yyyy"}}</div>
+<br/>
+<div>Purchased On: {{productInfo.purchasedDate |date :"fullDate"}}</div>
+<div>Purchased On: {{productInfo.purchasedDate |date :"short"}}</div>
+<div>Purchased On: {{productInfo.purchasedDate |date :"medium"}}</div>
+<div>Purchased On: {{productInfo.purchasedDate |date :"longDate"}}</div>
+<div>Purchased On: {{productInfo.purchasedDate |date :"mediumDate"}}</div>
+<div>Purchased On: {{productInfo.purchasedDate |date :"mediumTime"}}</div>
+<div>Purchased On: {{productInfo.purchasedDate |date :"shortTime"}}</div>
+<br/>
+<div>Price : {{productInfo.price|currency}} </div>
+<div>Price : {{productInfo.price|currency : 'USD' : true}} </div>
+<div>Price : {{productInfo.price|currency : 'INR' : true}} </div>
+<div>Price : {{productInfo.price|currency : 'GBP' : true}} </div>
+
+
+<br/>
+<div>Product Info : {{productInfo}}</div>
+<div>Product Info : {{productInfo| json}}</div>
+
+<br/>
+<div>Product Discount:{{productInfo.discount| percent}}</div>
+
+<ul>
+  <li *ngFor="let product of productList | slice:0:4"> {{product}}</li>
+</ul>
+
+
+<br/>
+<div>{{"Mary" | greetings}}</div>
+
+<div>{{2+2}}</div>

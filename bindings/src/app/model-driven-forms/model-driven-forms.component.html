@@ -1,0 +1,24 @@
+<h4>
+  model-driven-forms
+</h4>
+
+<form [formGroup]="userDetails" (ngSubmit)="formSubmit()" novalidate>
+  <div>First Name: <input type="text" formControlName="firstName"/></div>
+  <div>Last Name: <input type="text" formControlName="lastName"/></div>
+  <div>Password: <input type="password" formControlName="password" /></div>
+  <small style="color:red" [hidden]="userDetails.controls.password.valid || (userDetails.controls.password.pristine && !submitted)">
+        PASSWORD is required (minimum 5 characters).
+    </small>
+  <div>Email:<input type="email"  formControlName="email"/></div>
+  <div><input type="submit"/></div>
+
+
+ 
+</form>
+
+<div>
+     <div>Duration <input type="number"  min="00" max="12" pattern="[0-9]{2}" [(ngModel)]="durationInHour"/> : <input type="number" min="00" max="59" pattern="[0-9]{2}" [(ngModel)]="durationInMinutes"/> <button (click)="getDuration()">Display Duration</button></div>
+     <div *ngIf="displayDuration" >{{duration}}</div>
+</div>
+
+

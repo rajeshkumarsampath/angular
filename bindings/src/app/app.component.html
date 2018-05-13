@@ -22,11 +22,21 @@
 <div><b>{{greetingMsgFromChild}}</b></div>
 
 
-<h2>Git user List</h2>
+<!--<h2>Git user List</h2>
+<input type="text" [(ngModel)]="nameToSearch" placeholder="Search user"/>
 <ul>
-    <li *ngFor="let gitUser of gitUserList">{{gitUser.login}}</li>
-</ul>
+     <li *ngFor="let gitUser of gitUserList|async">{{gitUser.login}}</li>-->
+    <!--<li *ngFor="let gitUser of gitUserList|searchFilter:nameToSearch">{{gitUser.login}}</li>-->
+<!--</ul>
+
+<app-pipes> </app-pipes>-->
 
 
 
 
+
+
+<!--<app-template-driven-forms> </app-template-driven-forms>-->
+
+
+<!-- <app-model-driven-forms> </app-model-driven-forms> -->

@@ -1,0 +1,22 @@
+<h4>
+  template-driven-forms
+</h4>
+<form #myForm="ngForm" (ngSubmit)="formSubmit(myForm)" novalidate>
+  <div>First Name: <input type="text"  name='firstName' [(ngModel)]="firstName"   required/></div>
+  <div>Last Name: <input type="text" name="lastName" ngModel required/></div>
+  <div>Password= <input type="password" name="password" ngModel required/></div>
+  <div>Email:<input type="email" name="email" ngModel /></div>
+  <div><input type="submit" [disabled]="myForm.invalid"/></div>
+
+
+  <div>Is Form Valid : {{myForm.valid}}</div>
+  <div>Is Form Invalid : {{myForm.invalid}}</div>
+  <div>Is Form pristine : {{myForm.pristine}}</div>
+  <div>Is Form Dirty : {{myForm.dirty}}</div>
+  <div>Is Form touched : {{myForm.touched}}</div>
+  <div>Is Form untouched : {{myForm.untouched}}</div>
+
+
+  
+</form>
+
